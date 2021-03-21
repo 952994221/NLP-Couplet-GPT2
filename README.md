@@ -107,13 +107,10 @@ Decoder自行学会该怎么提取信息的过程，就是其在生成序列的�
 4. 该注意向量会作为Decoder下个时间点的输入
 
 即如下公式
-$$
-\begin{align}
-& \alpha_{ts}=\frac {exp(score(\boldsymbol h_t,\boldsymbol {\overline h_s}))}{\sum_{s'=1}^S exp(score(\boldsymbol h_t,\boldsymbol {\overline h_s})}&[Attention\ weight] && (1) \\
-& \boldsymbol c_t=\sum_s \alpha_{ts} \boldsymbol {\overline h_s} &[Context\ vector] &&(2) \\
-& \boldsymbol \alpha_t=f(\boldsymbol c_t,\boldsymbol h_t)=tanh(\boldsymbol W_c[\boldsymbol c_t;\boldsymbol h_t]) &[Attention\ vector] &&(3)
-\end{align}
-$$
+
+~~由于github不支持公式，后面的公式只能以源码显示了~~
+
+<a href="https://www.codecogs.com/eqnedit.php?latex=\begin{align}&space;&&space;\alpha_{ts}=\frac&space;{exp(score(\boldsymbol&space;h_t,\boldsymbol&space;{\overline&space;h_s}))}{\sum_{s'=1}^S&space;exp(score(\boldsymbol&space;h_t,\boldsymbol&space;{\overline&space;h_s})}\qquad&space;[Attention\&space;weight]&space;\\&space;&&space;\boldsymbol&space;c_t=\sum_s&space;\alpha_{ts}&space;\boldsymbol&space;{\overline&space;h_s}&space;\qquad&space;[Context\&space;vector]&space;\\&space;&&space;\boldsymbol&space;\alpha_t=f(\boldsymbol&space;c_t,\boldsymbol&space;h_t)=tanh(\boldsymbol&space;W_c[\boldsymbol&space;c_t;\boldsymbol&space;h_t])&space;\qquad&space;[Attention\&space;vector]&space;\end{align}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\begin{align}&space;&&space;\alpha_{ts}=\frac&space;{exp(score(\boldsymbol&space;h_t,\boldsymbol&space;{\overline&space;h_s}))}{\sum_{s'=1}^S&space;exp(score(\boldsymbol&space;h_t,\boldsymbol&space;{\overline&space;h_s})}\qquad&space;[Attention\&space;weight]&space;\\&space;&&space;\boldsymbol&space;c_t=\sum_s&space;\alpha_{ts}&space;\boldsymbol&space;{\overline&space;h_s}&space;\qquad&space;[Context\&space;vector]&space;\\&space;&&space;\boldsymbol&space;\alpha_t=f(\boldsymbol&space;c_t,\boldsymbol&space;h_t)=tanh(\boldsymbol&space;W_c[\boldsymbol&space;c_t;\boldsymbol&space;h_t])&space;\qquad&space;[Attention\&space;vector]&space;\end{align}" title="\begin{align} & \alpha_{ts}=\frac {exp(score(\boldsymbol h_t,\boldsymbol {\overline h_s}))}{\sum_{s'=1}^S exp(score(\boldsymbol h_t,\boldsymbol {\overline h_s})}\qquad [Attention\ weight] \\ & \boldsymbol c_t=\sum_s \alpha_{ts} \boldsymbol {\overline h_s} \qquad [Context\ vector] \\ & \boldsymbol \alpha_t=f(\boldsymbol c_t,\boldsymbol h_t)=tanh(\boldsymbol W_c[\boldsymbol c_t;\boldsymbol h_t]) \qquad [Attention\ vector] \end{align}" /></a>
 
 #### Transformer
 
